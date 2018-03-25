@@ -2,19 +2,19 @@
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = window.location.search.match( /print-pdf/gi ) ? "reveal.js/css/print/pdf.css" : "reveal.js/css/print/paper.css";
-document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>C++11 enum class<br></h1><div class="preamble"><div class="paragraph"><p><strong>scoped enums vs. unscoped enums</strong></p></div></div><p class="author"><small>Richard Szabo</small></p></section>
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="reveal.js/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="customcss.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>C++11 enum class<br></h1><div class="preamble"><div class="paragraph"><p><strong>scoped enums vs. unscoped enums</strong></p></div></div><p class="author"><small>Richard Szabo</small></p></section>
 <section id="how_wrote_code_using"><h2>How wrote code using:</h2><div class="ulist"><ul><li class="fragment"><p>C enums</p></li><li class="fragment"><p>C++98 enums</p></li><li class="fragment"><p>C++11 enum class only</p></li></ul></div></section>
-<section id="scope_pollution"><h2>scope pollution</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="c++ language-c++">  enum Person { joe, pete, jack };  // joe, pete, jack are
+<section id="scope_pollution" class="text-left"><h2>scope pollution:</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="c++ language-c++">  enum Person { joe, pete, jack };  // joe, pete, jack are
                                     // in same scope as Person
 
   auto pete = true;                 // error! pete already
                                     // declared in this scope</code></pre></div></div>
 <div class="paragraph"><p>Pitfalls of an enum technology of the 80&#8217;s</p></div>
 <aside class="notes"><div class="paragraph"><p>C++98-style enums name belong to the scope containing enum.</p></div></aside></section>
-<section id="implicit_type_conversation_to_integral_types"><h2>implicit type conversation to integral types</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="c++ language-c++"> enum Person { joe, pete, jack };  // unscoped enum
+<section id="implicit_type_conversation_to_integral_types" class="text-left"><h2>implicit type conversation to integral types:</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="c++ language-c++"> enum Person { joe, pete, jack };  // unscoped enum
 
- std::vector&lt;std::size_t&gt;         // func. returning
-   primeFactors(std::size_t);     // prime factors of x
+ std::vector&lt;std::size_t&gt;          // func. returning
+   primeFactors(std::size_t);      // prime factors of x
 
  Person p = pete;
 

@@ -8,6 +8,7 @@
 :linkattrs:
 :idprefix:
 :source-highlighter: highlightjs
+:customcss: customcss.css
 
 = C++11 enum class +
 
@@ -25,7 +26,8 @@
 * C++98 enums
 * C++11 enum class only
 
-== scope pollution
+[.text-left]
+== scope pollution:
 
 
 [source, c++]
@@ -46,7 +48,8 @@ C++98-style enums name belong to the scope containing enum.
 
 --
 
-== implicit type conversation to integral types
+[.text-left]
+== implicit type conversation to integral types:
 
 
 [source, c++]
