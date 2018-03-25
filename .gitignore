@@ -1,0 +1,9 @@
+cmake-build*
+**/dzslides
+**/reveal.js
+**/dzslides/*
+**/reveal.js/*
+**/reveal/.bundle
+**/reveal/.bundle/*
+Gemfile.lock
+.idea
